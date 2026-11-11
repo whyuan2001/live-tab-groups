@@ -4,7 +4,7 @@
 
 ## 安装
 
-1. 在本仓库的 **Releases** 下载 `live-tab-groups-v1.0.0-install.zip`，解压到一个准备长期保留的文件夹。确认打开该文件夹时能直接看到 `manifest.json`。
+1. [下载安装包 `live-tab-groups-v1.0.0-install.zip`](downloads/live-tab-groups-v1.0.0-install.zip)，解压到一个准备长期保留的文件夹。确认打开该文件夹时能直接看到 `manifest.json`。
 2. 在 Chrome 打开 `chrome://extensions`，开启右上角**开发者模式**，点击**加载已解压的扩展程序**，选择上述文件夹。
 3. 将“实时标签组”固定在工具栏。打开两个同网站网页，确认顶部出现标签组。
 
@@ -24,7 +24,7 @@
 
 ## 源码与维护
 
-需要支持 Manifest V3 的 Chrome 与 Node.js。运行 `npm test`、`npm run evaluate`、`npm run check` 验证核心逻辑；`npm run build:github` 生成 GitHub Releases 的用户安装 ZIP。公开安装包只包含用户侧分组功能；本机工作台与 Native Messaging 同步属于开发者维护工具，不是用户安装步骤。
+需要支持 Manifest V3 的 Chrome 与 Node.js。运行 `npm test`、`npm run evaluate`、`npm run check` 验证核心逻辑；`npm run build:github` 生成用户安装 ZIP。公开安装包只包含用户侧分组功能；本机工作台与 Native Messaging 同步属于开发者维护工具，不是用户安装步骤。
 
 ## 隐私
 
