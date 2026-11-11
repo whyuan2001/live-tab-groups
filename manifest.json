@@ -1,0 +1,17 @@
+{
+  "manifest_version": 3,
+  "name": "实时标签组",
+  "version": "1.0.0",
+  "description": "自动整理 Chrome 原生标签组，记录并展示每次分类纠正。",
+  "minimum_chrome_version": "102",
+  "permissions": ["tabs", "tabGroups", "storage", "nativeMessaging", "alarms"],
+  "background": {
+    "service_worker": "background.js",
+    "type": "module"
+  },
+  "action": {
+    "default_title": "实时标签组",
+    "default_popup": "popup.html"
+  },
+  "options_page": "history.html"
+}

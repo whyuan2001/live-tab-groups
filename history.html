@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>产品工作台 · 实时标签组</title>
+  <link rel="stylesheet" href="history.css">
+</head>
+<body>
+  <main>
+    <header>
+      <div><p class="eyebrow">实时标签组 · 产品工作台</p><h1>记录与版本</h1><p>在这里查看操作与纠错、自动分组决策和产品版本。历史记录的操作通道可见，操作者未核实；其中也可能包含开发验证操作。</p></div>
+      <div><button id="export">导出 JSON 备份</button><p id="syncStatus" role="status" aria-live="polite">正在读取扩展数据；请从已安装的扩展地址打开本页。</p></div>
+    </header>
+    <section class="summary"><strong id="total">读取中</strong><span>条操作与纠错记录</span><strong id="decisionTotal">读取中</strong><span>次自动分组决策</span><label>筛选
+      <select id="kind">
+        <option value="">全部修改</option><option value="group_renamed">改写组名</option>
+        <option value="tab_moved">移动标签页</option><option value="manual_group_created">手动建组</option><option value="group_reorganized">拆分错误旧组</option><option value="rule_saved">纠正分类</option>
+        <option value="rule_removed">删除规则</option><option value="setting_changed">设置变化</option>
+      </select>
+    </label></section>
+    <section class="sectionHeading"><h2>产品版本更迭</h2><p>开发发布记录；不会因单次纠错自动修改全局策略。</p></section>
+    <section id="releases" aria-label="产品版本更迭"><p class="fallback">正在加载版本记录。如果这里一直为空，请确认地址以 chrome-extension:// 开头并重载扩展。</p></section>
+    <section class="sectionHeading"><h2>现有纠正规则</h2><p>旧规则保留在本机；弹窗已不再提供设置入口。</p></section>
+    <section id="rules" aria-label="现有纠正规则"><p class="fallback">正在读取本机规则…</p></section>
+    <section class="sectionHeading"><h2>自动分组决策</h2><p>由已发布策略生成，和操作记录分别保存。</p></section>
+    <section id="decisions" aria-label="自动分组决策"><p class="fallback">正在读取自动决策…</p></section>
+    <section class="sectionHeading"><h2>操作与纠错记录</h2><p>保留原始记录；“Chrome”或“插件弹窗”只说明操作通道。</p></section>
+    <section id="events" class="events" aria-live="polite"><p class="fallback">正在读取操作记录…</p></section>
+    <button id="more" hidden>加载更多</button>
+    <p id="status" role="status"></p>
+  </main>
+  <script type="module" src="history.js"></script>
+</body>
+</html>

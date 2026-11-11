@@ -1,0 +1,19 @@
+{
+  "name": "live-tab-groups",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "node --test tests/*.test.js",
+    "analyze": "node scripts/analyze-feedback.mjs",
+    "prepare-review": "node scripts/prepare-review.mjs",
+    "build-dataset": "node scripts/build-dataset.mjs",
+    "evaluate": "node scripts/evaluate-strategy.mjs",
+    "check": "node --check classifier.js && node --check manager.js && node --check manual-group.js && node --check highlight-grouper.js && node --check version-update.js && node --check feedback-store.js && node --check feedback-monitor.js && node --check rename-collector.js && node --check native-sync.js && node --check sync-alarm.js && node --check background.js && node --check popup.js && node --check history.js && node --check history-model.js && node --check review-workflow.js && node --check dev-workbench/server.mjs && node --check dev-workbench/model.js && node --check dev-workbench/app.js && node --check iteration-analysis.js && node --check strategy-eval.js && node --check scripts/analyze-feedback.mjs && node --check scripts/prepare-review.mjs && node --check scripts/build-dataset.mjs && node --check scripts/evaluate-strategy.mjs",
+    "build": "node scripts/package.mjs",
+    "build:store": "node scripts/package-store.mjs",
+    "build:github": "npm run build:store && node scripts/package-github.mjs",
+    "build:source": "node scripts/prepare-public-source.mjs",
+    "workbench": "node dev-workbench/server.mjs"
+  }
+}

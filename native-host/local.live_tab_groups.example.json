@@ -1,0 +1,9 @@
+{
+  "name": "local.live_tab_groups",
+  "description": "实时标签组本机反馈同步",
+  "path": "/ABSOLUTE/PATH/TO/host.py",
+  "type": "stdio",
+  "allowed_origins": [
+    "chrome-extension://YOUR_EXTENSION_ID/"
+  ]
+}

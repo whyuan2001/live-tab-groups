@@ -1,0 +1,25 @@
+{
+  "schemaVersion": 2,
+  "events": [
+    {
+      "id": "sample-event-1",
+      "time": "2026-11-04T10:30:00Z",
+      "kind": "group_renamed",
+      "groupId": 7,
+      "before": "Figma",
+      "after": "设计",
+      "tabs": [{ "site": "figma.com", "page": "https://figma.com/example" }]
+    }
+  ],
+  "decisions": [
+    {
+      "id": "sample-decision-1",
+      "time": "2026-11-04T10:00:00Z",
+      "groupId": 7,
+      "title": "Figma",
+      "groupingVersion": "1.0.0",
+      "namingVersion": "1.0.0",
+      "tabs": [{ "site": "figma.com", "page": "https://figma.com/example" }]
+    }
+  ]
+}

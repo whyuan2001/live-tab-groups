@@ -1,0 +1,47 @@
+[
+  {
+    "id": "three-figma-tabs",
+    "tabs": [
+      { "id": 1, "url": "https://www.figma.com/file/1" },
+      { "id": 2, "url": "https://www.figma.com/file/2" },
+      { "id": 3, "url": "https://www.figma.com/file/3" }
+    ],
+    "expected": { "groups": [{ "title": "Figma", "tabIds": [1, 2, 3] }], "ungrouped": [] }
+  },
+  {
+    "id": "single-page-no-group",
+    "tabs": [{ "id": 1, "url": "https://www.figma.com/file/1" }],
+    "expected": { "groups": [], "ungrouped": [1] }
+  },
+  {
+    "id": "mixed-ip-legacy-group",
+    "reorganize": true,
+    "groups": [{ "id": 7, "title": "127.0.0.1" }],
+    "tabs": [
+      { "id": 1, "url": "http://127.0.0.1:3000/jobs", "groupId": 7 },
+      { "id": 2, "url": "http://127.0.0.1:4000/billing", "groupId": 7 },
+      { "id": 3, "url": "https://careers.pdd.com/jobs", "groupId": 7 }
+    ],
+    "expected": { "groups": [], "ungrouped": [1, 2, 3] }
+  },
+  {
+    "id": "mixed-domain-legacy-group",
+    "reorganize": true,
+    "groups": [{ "id": 7, "title": "jobs.bytedance.com" }],
+    "tabs": [
+      { "id": 1, "url": "https://jobs.bytedance.com/a", "groupId": 7 },
+      { "id": 2, "url": "https://jobs.bytedance.com/b", "groupId": 7 },
+      { "id": 3, "url": "https://chatgpt.com/c/1", "groupId": 7 }
+    ],
+    "expected": { "groups": [{ "title": "Bytedance", "tabIds": [1, 2] }], "ungrouped": [3] }
+  },
+  {
+    "id": "custom-manual-group-protected",
+    "groups": [{ "id": 7, "title": "作品集发布" }],
+    "tabs": [
+      { "id": 1, "url": "https://github.com/user/site", "groupId": 7 },
+      { "id": 2, "url": "https://figma.com/file/1", "groupId": 7 }
+    ],
+    "expected": { "groups": [{ "title": "作品集发布", "tabIds": [1, 2] }], "ungrouped": [] }
+  }
+]

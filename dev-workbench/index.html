@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>实时标签组 · 开发者工作台</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <main>
+    <header class="topbar">
+      <div class="brand"><span class="brandMark" aria-hidden="true"></span><span>实时标签组</span><span class="divider">/</span><span>开发者工作台</span></div>
+      <button id="export" type="button">导出 JSON</button>
+    </header>
+    <section class="intro">
+      <div><p class="eyebrow">本机数据</p><h1>运行概览</h1><p>自动决策、操作记录与产品版本集中查看。历史记录的操作者尚未确认。</p></div>
+      <p id="status" role="status">正在读取本机镜像…</p>
+    </section>
+    <section class="summary" aria-label="记录概览">
+      <div><span>操作与纠错</span><strong id="eventCount">—</strong></div>
+      <div><span>自动决策</span><strong id="decisionCount">—</strong></div>
+      <div><span>产品版本</span><strong id="currentVersion">—</strong></div>
+    </section>
+    <section class="loop" aria-labelledby="loopTitle">
+      <div class="sectionTitle"><div><p class="eyebrow">迭代流程</p><h2 id="loopTitle">从记录到新版本</h2></div><span>人工决定是否采用</span></div>
+      <ol class="loopSteps">
+        <li><span>01 · 收集</span><strong id="collectedCount">—</strong><p>本机保存操作与自动决策。</p></li>
+        <li><span>02 · 提取候选</span><strong id="candidateCount">—</strong><p>从更改中找待核对案例；还不是标准答案。</p></li>
+        <li><span>03 · 人工审核</span><strong id="reviewCount">—</strong><p id="reviewStatus">等待生成本机审核队列。</p></li>
+        <li><span>04 · 评测与发布</span><strong id="fixtureCount">—</strong><p>固定样本用于回归；策略和版本由人决定。</p></li>
+      </ol>
+    </section>
+    <section class="activity">
+      <div class="sectionTitle"><div><p class="eyebrow">活动</p><h2>运行记录</h2></div><span id="listCount"></span></div>
+      <div class="filters" role="group" aria-label="记录类型">
+        <a class="filter" data-filter="all" href="/">全部</a>
+        <a class="filter" data-filter="event" href="/?filter=event">操作与纠错</a>
+        <a class="filter" data-filter="decision" href="/?filter=decision">自动决策</a>
+      </div>
+      <div id="activityList" class="activityList" aria-live="polite"></div>
+    </section>
+    <details class="versions"><summary><span><span class="eyebrow">发布记录</span><strong>产品与策略版本</strong></span><span id="versionSummary">展开查看</span></summary><div id="releases"></div></details>
+  </main>
+  <script type="module" src="/app.js"></script>
+</body>
+</html>

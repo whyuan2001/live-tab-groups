@@ -1,0 +1,7 @@
+private/
+dist/
+dist-store/
+.release/
+__pycache__/
+*.py[cod]
+.DS_Store
