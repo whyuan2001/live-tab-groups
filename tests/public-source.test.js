@@ -23,6 +23,6 @@ test('public GitHub source staging contains product code without local private c
   const publishingFiles = await readdir(new URL('PUBLISHING/', source));
   assert.deepEqual(publishingFiles.sort(), ['GITHUB_README.md', 'PRIVACY.md']);
   const readme = await readFile(new URL('README.md', source), 'utf8');
-  assert.match(readme, /Releases/);
+  assert.match(readme, /raw\/refs\/heads\/main\/downloads\/live-tab-groups-v1\.0\.0-install\.zip/);
   assert.match(readme, /加载已解压的扩展程序/);
 });
