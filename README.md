@@ -4,7 +4,7 @@
 
 ## 安装
 
-1. [下载安装包 `live-tab-groups-v1.0.0-install.zip`](downloads/live-tab-groups-v1.0.0-install.zip)，解压到一个准备长期保留的文件夹。确认打开该文件夹时能直接看到 `manifest.json`。
+1. [直接下载 `live-tab-groups-v1.0.0-install.zip`](https://github.com/whyuan2001/live-tab-groups/raw/refs/heads/main/downloads/live-tab-groups-v1.0.0-install.zip)，解压到一个准备长期保留的文件夹。确认打开该文件夹时能直接看到 `manifest.json`。
 2. 在 Chrome 打开 `chrome://extensions`，开启右上角**开发者模式**，点击**加载已解压的扩展程序**，选择上述文件夹。
 3. 将“实时标签组”固定在工具栏。打开两个同网站网页，确认顶部出现标签组。
 
