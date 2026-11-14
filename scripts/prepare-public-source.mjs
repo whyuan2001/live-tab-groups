@@ -20,7 +20,7 @@ const directories = {
   scripts: name => name.endsWith('.mjs'),
   tests: name => name.endsWith('.js'),
   'native-host': name => ['host.py', 'test_host.py'].includes(name),
-  PUBLISHING: name => ['GITHUB_README.md', 'PRIVACY.md'].includes(name),
+  PUBLISHING: name => ['GITHUB_README.md', 'PRIVACY.md', 'EDGE_PRIVACY.md', 'EDGE_LISTING.md'].includes(name),
 };
 
 await rm(target, { recursive: true, force: true });
@@ -34,6 +34,7 @@ for (const [directory, include] of Object.entries(directories)) {
 }
 await copyFile(join(root, 'PUBLISHING', 'GITHUB_README.md'), join(target, 'README.md'));
 await copyFile(join(root, 'PUBLISHING', 'PRIVACY.md'), join(target, 'PRIVACY.md'));
+await copyFile(join(root, 'PUBLISHING', 'EDGE_PRIVACY.md'), join(target, 'EDGE_PRIVACY.md'));
 await writeFile(join(target, 'native-host', 'local.live_tab_groups.example.json'), `${JSON.stringify({
   name: 'local.live_tab_groups',
   description: '实时标签组本机反馈同步',
